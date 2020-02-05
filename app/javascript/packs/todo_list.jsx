@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Todo from './todo'
 
 export default class TodoList extends React.Component {
   render(){
     const data = this.props.data;
     const listItems = data.map((item) =>
-      <li className={item.completed ? 'complete' : ''} key={item.id}>
-        <span>{item.description}</span>
-      </li>
+      <Todo id={item.id} description={item.description} completed={item.completed} />
     );
 
     return(
